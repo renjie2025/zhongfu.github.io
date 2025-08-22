@@ -3,224 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>防护服装定制单 - 安全防护</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#165DFF',
-                        secondary: '#36BFFA',
-                        success: '#00B42A',
-                        warning: '#FF7D00',
-                        danger: '#F53F3F',
-                        dark: '#1D2129',
-                        light: '#F2F3F5'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .content-auto {
-                content-visibility: auto;
-            }
-        }
+    <title>定制订单 - 医用轻质核辐射防护装备</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header { background-color: #f8f8f8; padding: 20px; text-align: center; }
+        nav { background-color: #333; color: white; padding: 10px; }
+        nav ul { list-style: none; padding: 0; display: flex; justify-content: center; }
+        nav ul li { margin: 0 15px; }
+        nav ul li a { color: white; text-decoration: none; }
+        .form-section { padding: 20px; max-width: 800px; margin: auto; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; }
+        input, textarea { width: 100%; padding: 8px; margin-bottom: 10px; }
+        .btn { display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; }
+        .btn:hover { background-color: #0056b3; }
+        footer { background-color: #333; color: white; text-align: center; padding: 10px; }
     </style>
 </head>
-<body class="bg-gray-50 font-sans">
-    <!-- 导航栏 -->
-    <header class="bg-white shadow-md sticky top-0 z-50 transition-all duration-300">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center">
-                <i class="fa fa-shield text-primary text-3xl mr-3"></i>
-                <h1 class="text-2xl font-bold text-dark">医用轻质核辐射防护<span class="text-primary">装备</span></h1>
-            </div>
-            <nav class="hidden md:flex space-x-6">
-                <a href="index.html#products" class="text-gray-600 hover:text-primary transition-colors">防护产品</a>
-                <a href="index.html#features" class="text-gray-600 hover:text-primary transition-colors">产品特点</a>
-                <a href="custom-order.html" class="text-primary font-semibold transition-colors">定制订单</a>
-                <a href="index.html#about" class="text-gray-600 hover:text-primary transition-colors">关于我们</a>
-                <a href="index.html#contact" class="text-gray-600 hover:text-primary transition-colors">联系我们</a>
-            </nav>
-            <div class="md:hidden">
-                <button id="menuBtn" class="text-gray-600 hover:text-primary">
-                    <i class="fa fa-bars text-xl"></i>
-                </button>
-            </div>
-        </div>
-        <!-- 移动端菜单 -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
-            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
-                <a href="index.html#products" class="py-2 text-gray-600 hover:text-primary transition-colors">防护产品</a>
-                <a href="index.html#features" class="py-2 text-gray-600 hover:text-primary transition-colors">产品特点</a>
-                <a href="custom-order.html" class="py-2 text-primary font-semibold transition-colors">定制订单</a>
-                <a href="index.html#about" class="py-2 text-gray-600 hover:text-primary transition-colors">关于我们</a>
-                <a href="index.html#contact" class="py-2 text-gray-600 hover:text-primary transition-colors">联系我们</a>
-            </div>
-        </div>
+<body>
+    <header>
+        <h1>医用轻质核辐射防护装备</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">防护产品</a></li>
+                <li><a href="index.html#features">产品特点</a></li>
+                <li><a href="custom-order.html">定制订单</a></li>
+                <li><a href="index.html#about">关于我们</a></li>
+                <li><a href="index.html#contact">联系我们</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- 定制订单表单 -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">防护服装定制单</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-lg">填写以下信息以定制您的专属防护服装</p>
+    <section class="form-section">
+        <h2>防护服装定制单</h2>
+        <p>填写以下信息以定制您的专属防护服装</p>
+        <form action="submit-order" method="post">
+            <div class="form-group">
+                <h3>客户信息</h3>
+                <label for="name">客户姓名</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="phone">联系电话</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+                <label for="wechat">微信号</label>
+                <input type="text" id="wechat" name="wechat">
+                
+                <label for="order-date">定制日期</label>
+                <input type="date" id="order-date" name="order-date" required>
+                
+                <label for="delivery-date">交货日期</label>
+                <input type="date" id="delivery-date" name="delivery-date" required>
             </div>
-            <div class="bg-white p-8 rounded-xl shadow-lg max-w-3xl mx-auto">
-                <form id="protectiveClothingForm" class="space-y-6">
-                    <!-- 客户信息 -->
-                    <h3 class="text-xl font-semibold text-dark">客户信息</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">客户姓名</label>
-                            <input type="text" name="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">联系电话</label>
-                            <input type="tel" name="phone" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">微信号</label>
-                            <input type="text" name="wechat" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">定制日期</label>
-                            <input type="date" name="orderDate" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">交货日期</label>
-                            <input type="date" name="deliveryDate" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50" required>
-                        </div>
-                    </div>
 
-                    <!-- 尺寸信息 -->
-                    <h3 class="text-xl font-semibold text-dark mt-6">尺寸信息 (单位: 厘米)</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">身高</label>
-                            <input type="number" step="0.1" name="height" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">衣长</label>
-                            <input type="number" step="0.1" name="jacketLength" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">肩宽</label>
-                            <input type="number" step="0.1" name="shoulderWidth" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">袖长</label>
-                            <input type="number" step="0.1" name="sleeveLength" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">胸围</label>
-                            <input type="number" step="0.1" name="chest" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">中腰</label>
-                            <input type="number" step="0.1" name="waist" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">领围</label>
-                            <input type="number" step="0.1" name="collar" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">前胸宽</label>
-                            <input type="number" step="0.1" name="frontChestWidth" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">后背宽</label>
-                            <input type="number" step="0.1" name="backWidth" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">裤长</label>
-                            <input type="number" step="0.1" name="pantLength" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">腰围</label>
-                            <input type="number" step="0.1" name="pantWaist" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">臀围</label>
-                            <input type="number" step="0.1" name="hip" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">横档</label>
-                            <input type="number" step="0.1" name="crossCrotch" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">中档</label>
-                            <input type="number" step="0.1" name="midCrotch" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">脚口</label>
-                            <input type="number" step="0.1" name="legOpening" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">直裆</label>
-                            <input type="number" step="0.1" name="frontCrotch" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">腹围</label>
-                            <input type="number" step="0.1" name="abdomen" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50" required>
-                        </div>
-                    </div>
-
-                    <!-- 具体要求 -->
-                    <h3 class="text-xl font-semibold text-dark mt-6">具体要求</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">前片铅当量</label>
-                            <input type="text" name="frontLeadEquivalent" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">后片铅当量</label>
-                            <input type="text" name="backLeadEquivalent" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50" required>
-                        </div>
-                    </div>
-
-                    <div class="mt-6 flex space-x-4">
-                        <button type="button" onclick="submitForm()" class="flex-1 bg-primary text-white font-semibold py-3 px-4 rounded-lg hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 transition-all">
-                            提交定制单
-                        </button>
-                        <a href="index.html" class="flex-1 bg-gray-200 text-dark font-semibold py-3 px-4 rounded-lg hover:bg-gray-300 text-center transition-all">
-                            返回主页
-                        </a>
-                    </div>
-                </form>
+            <div class="form-group">
+                <h3>尺寸信息 (单位: 厘米)</h3>
+                <label for="height">身高</label>
+                <input type="number" id="height" name="height" step="0.1" required>
+                
+                <label for="length">衣长</label>
+                <input type="number" id="length" name="length" step="0.1" required>
+                
+                <label for="shoulder">肩宽</label>
+                <input type="number" id="shoulder" name="shoulder" step="0.1" required>
+                
+                <label for="sleeve">袖长</label>
+                <input type="number" id="sleeve" name="sleeve" step="0.1" required>
+                
+                <label for="chest">胸围</label>
+                <input type="number" id="chest" name="chest" step="0.1" required>
+                
+                <label for="waist">中腰</label>
+                <input type="number" id="waist" name="waist" step="0.1" required>
+                
+                <label for="collar">领围</label>
+                <input type="number" id="collar" name="collar" step="0.1" required>
+                
+                <label for="front-chest">前胸宽</label>
+                <input type="number" id="front-chest" name="front-chest" step="0.1" required>
+                
+                <label for="back-width">后背宽</label>
+                <input type="number" id="back-width" name="back-width" step="0.1" required>
+                
+                <label for="pants-length">裤长</label>
+                <input type="number" id="pants-length" name="pants-length" step="0.1" required>
+                
+                <label for="waist-circum">腰围</label>
+                <input type="number" id="waist-circum" name="waist-circum" step="0.1" required>
+                
+                <label for="hip">臀围</label>
+                <input type="number" id="hip" name="hip" step="0.1" required>
+                
+                <label for="crotch-width">横档</label>
+                <input type="number" id="crotch-width" name="crotch-width" step="0.1" required>
+                
+                <label for="crotch-depth">中档</label>
+                <input type="number" id="crotch-depth" name="crotch-depth" step="0.1" required>
+                
+                <label for="leg-opening">脚口</label>
+                <input type="number" id="leg-opening" name="leg-opening" step="0.1" required>
+                
+                <label for="inseam">直裆</label>
+                <input type="number" id="inseam" name="inseam" step="0.1" required>
+                
+                <label for="abdomen">腹围</label>
+                <input type="number" id="abdomen" name="abdomen" step="0.1" required>
             </div>
-        </div>
+
+            <div class="form-group">
+                <h3>具体要求</h3>
+                <label for="front-lead">前片铅当量</label>
+                <input type="text" id="front-lead" name="front-lead" required>
+                
+                <label for="back-lead">后片铅当量</label>
+                <input type="text" id="back-lead" name="back-lead" required>
+            </div>
+
+            <button type="submit" class="btn">提交定制单</button>
+            <a href="index.html" class="btn">返回主页</a>
+        </form>
     </section>
 
-    <!-- 脚本 -->
-    <script>
-        // 移动端菜单切换
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // 表单提交
-        function submitForm() {
-            const form = document.getElementById('protectiveClothingForm');
-            const formData = new FormData(form);
-            const data = {};
-            formData.forEach((value, key) => {
-                data[key] = value;
-            });
-            console.log('提交的定制单数据:', data);
-            alert('定制单已提交！请检查控制台查看数据。');
-            form.reset();
-        }
-    </script>
+    <footer>
+        <p>联系我们：湖北中辐新材料有限公司</p>
+        <p>Email: contact@zhongfu.com | 电话: 123-456-7890</p>
+    </footer>
 </body>
 </html>
