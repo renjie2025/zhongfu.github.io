@@ -75,7 +75,7 @@
                 <p class="text-gray-600 max-w-2xl mx-auto text-lg">请填写以下信息以定制您的核辐射防护服，我们将尽快与您联系确认订单详情。</p>
             </div>
             <div class="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-md">
-                <form id="customOrderForm" class="space-y-6">
+                <form id="customOrderForm" action="/api/orders" method="POST" class="space-y-6">
                     <div>
                         <label for="customerName" class="block text-sm font-medium text-gray-700">客户名称</label>
                         <input type="text" id="customerName" name="customerName" required
@@ -125,11 +125,37 @@
     <!-- 表单提交脚本 -->
     <script>
         const form = document.getElementById('customOrderForm');
-        form.addEventListener('submit', function(e) {
+        form.addEventListener('submit', async function(e) {
             e.preventDefault();
-            // 简单验证示例，实际应用中应发送到服务器
-            alert('订单提交成功！我们将尽快与您联系。');
-            form.reset();
+            
+            const formData = new FormData(form);
+            const data = {
+                customerName: formData.get('customerName'),
+                contactPhone: formData.get('contactPhone'),
+                orderDate: formData.get('orderDate'),
+                deliveryDate: formData.get('deliveryDate'),
+                styleSelection: formData.get('styleSelection')
+            };
+
+            try {
+                const response = await fetch('/api/orders', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    alert('订单提交成功！我们将尽快与您联系。');
+                    form.reset();
+                } else {
+                    alert('订单提交失败，请稍后重试。');
+                }
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                alert('网络错误，请检查连接后重试。');
+            }
         });
 
         // 移动端菜单切换
