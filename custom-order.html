@@ -2,7 +2,8 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="定制您的医用轻质核辐射防护服 - 湖北中辐新材料有限公司">
     <title>定制防护服订单 - 湖北中辐新材料有限公司</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -22,6 +23,9 @@
                     fontFamily: {
                         sans: ['Inter', 'system-ui', 'sans-serif'],
                     },
+                    screens: {
+                        'xs': '475px',
+                    }
                 }
             }
         }
@@ -31,78 +35,81 @@
             .content-auto {
                 content-visibility: auto;
             }
+            .no-tap-highlight {
+                -webkit-tap-highlight-color: transparent;
+            }
         }
     </style>
 </head>
-<body class="bg-gray-50 font-sans">
+<body class="bg-gray-50 font-sans antialiased">
     <!-- 导航栏 -->
     <header class="bg-white shadow-md sticky top-0 z-50 transition-all duration-300">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
             <div class="flex items-center">
-                <i class="fa fa-shield text-primary text-3xl mr-3"></i>
-                <h1 class="text-2xl font-bold text-dark">医用轻质核辐射防护<span class="text-primary">装备</span></h1>
+                <i class="fa fa-shield text-primary text-2xl sm:text-3xl mr-2 sm:mr-3"></i>
+                <h1 class="text-xl sm:text-2xl font-bold text-dark">医用轻质核辐射防护<span class="text-primary">装备</span></h1>
             </div>
-            <nav class="hidden md:flex space-x-6">
-                <a href="index.html" class="text-gray-600 hover:text-primary transition-colors">返回首页</a>
-                <a href="index.html#products" class="text-gray-600 hover:text-primary transition-colors">防护产品</a>
-                <a href="index.html#features" class="text-gray-600 hover:text-primary transition-colors">产品特点</a>
-                <a href="index.html#about" class="text-gray-600 hover:text-primary transition-colors">关于我们</a>
-                <a href="index.html#contact" class="text-gray-600 hover:text-primary transition-colors">联系我们</a>
+            <nav class="hidden md:flex space-x-4 lg:space-x-6">
+                <a href="index.html" class="text-gray-600 hover:text-primary transition-colors text-sm lg:text-base">返回首页</a>
+                <a href="index.html#products" class="text-gray-600 hover:text-primary transition-colors text-sm lg:text-base">防护产品</a>
+                <a href="index.html#features" class="text-gray-600 hover:text-primary transition-colors text-sm lg:text-base">产品特点</a>
+                <a href="index.html#about" class="text-gray-600 hover:text-primary transition-colors text-sm lg:text-base">关于我们</a>
+                <a href="index.html#contact" class="text-gray-600 hover:text-primary transition-colors text-sm lg:text-base">联系我们</a>
             </nav>
             <div class="md:hidden">
-                <button id="menuBtn" class="text-gray-600 hover:text-primary">
+                <button id="menuBtn" class="text-gray-600 hover:text-primary focus:outline-none no-tap-highlight" aria-label="打开菜单">
                     <i class="fa fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
         <!-- 移动端菜单 -->
         <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
-            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
-                <a href="index.html" class="py-2 text-gray-600 hover:text-primary transition-colors">返回首页</a>
-                <a href="index.html#products" class="py-2 text-gray-600 hover:text-primary transition-colors">防护产品</a>
-                <a href="index.html#features" class="py-2 text-gray-600 hover:text-primary transition-colors">产品特点</a>
-                <a href="index.html#about" class="py-2 text-gray-600 hover:text-primary transition-colors">关于我们</a>
-                <a href="index.html#contact" class="py-2 text-gray-600 hover:text-primary transition-colors">联系我们</a>
+            <div class="container mx-auto px-4 sm:px-6 py-2 flex flex-col space-y-3">
+                <a href="index.html" class="py-2 text-gray-600 hover:text-primary transition-colors text-base">返回首页</a>
+                <a href="index.html#products" class="py-2 text-gray-600 hover:text-primary transition-colors text-base">防护产品</a>
+                <a href="index.html#features" class="py-2 text-gray-600 hover:text-primary transition-colors text-base">产品特点</a>
+                <a href="index.html#about" class="py-2 text-gray-600 hover:text-primary transition-colors text-base">关于我们</a>
+                <a href="index.html#contact" class="py-2 text-gray-600 hover:text-primary transition-colors text-base">联系我们</a>
             </div>
         </div>
     </header>
 
     <!-- 定制表单 -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">定制您的防护服</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-lg">请填写以下信息以定制您的核辐射防护服，我们将尽快与您联系确认订单详情。</p>
+    <section class="py-10 sm:py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-dark mb-4">定制您的防护服</h2>
+                <p class="text-gray-600 max-w-xl sm:max-w-2xl mx-auto text-base sm:text-lg">请填写以下信息以定制您的核辐射防护服，我们将尽快与您联系确认订单详情。</p>
             </div>
-            <div class="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-md">
-                <form id="customOrderForm" action="/api/orders" method="POST" class="space-y-6">
+            <div class="max-w-xl sm:max-w-2xl mx-auto bg-white p-6 sm:p-8 rounded-xl shadow-md">
+                <div id="customOrderForm" class="space-y-6">
                     <div>
                         <label for="customerName" class="block text-sm font-medium text-gray-700">客户名称</label>
                         <input type="text" id="customerName" name="customerName" required
-                               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary"
+                               class="mt-1 block w-full px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary text-sm sm:text-base touch-manipulation"
                                placeholder="请输入您的姓名或公司名称">
                     </div>
                     <div>
                         <label for="contactPhone" class="block text-sm font-medium text-gray-700">联系电话</label>
                         <input type="tel" id="contactPhone" name="contactPhone" required
                                pattern="^\+?\d{10,15}$" title="请输入有效的电话号码（10-15位数字，可包含国家代码）"
-                               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary"
+                               class="mt-1 block w-full px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary text-sm sm:text-base touch-manipulation"
                                placeholder="请输入您的联系电话">
                     </div>
                     <div>
                         <label for="orderDate" class="block text-sm font-medium text-gray-700">定制日期</label>
                         <input type="date" id="orderDate" name="orderDate" required
-                               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                               class="mt-1 block w-full px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary text-sm sm:text-base touch-manipulation">
                     </div>
                     <div>
                         <label for="deliveryDate" class="block text-sm font-medium text-gray-700">交货日期</label>
                         <input type="date" id="deliveryDate" name="deliveryDate" required
-                               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                               class="mt-1 block w-full px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary text-sm sm:text-base touch-manipulation">
                     </div>
                     <div>
                         <label for="styleSelection" class="block text-sm font-medium text-gray-700">款式选择</label>
                         <select id="styleSelection" name="styleSelection" required
-                                class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                                class="mt-1 block w-full px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary text-sm sm:text-base touch-manipulation">
                             <option value="" disabled selected>请选择防护服款式</option>
                             <option value="分体有袖">分体有袖</option>
                             <option value="分体无袖">分体无袖</option>
@@ -113,11 +120,11 @@
                     </div>
                     <div class="text-center">
                         <button type="submit"
-                                class="bg-primary text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-primary/90 transition-all">
+                                class="bg-primary text-white font-semibold px-6 sm:px-8 py-2 sm:py-3 rounded-lg shadow-lg hover:bg-primary/90 transition-all text-sm sm:text-base no-tap-highlight">
                             提交订单 <i class="fa fa-arrow-right ml-2"></i>
                         </button>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </section>
@@ -162,7 +169,21 @@
         const menuBtn = document.getElementById('menuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         menuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
             mobileMenu.classList.toggle('hidden');
+            menuBtn.setAttribute('aria-expanded', isHidden);
+            menuBtn.querySelector('i').classList.toggle('fa-bars', isHidden);
+            menuBtn.querySelector('i').classList.toggle('fa-times', !isHidden);
+        });
+
+        // 关闭移动端菜单当点击外部
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target) && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                menuBtn.setAttribute('aria-expanded', 'false');
+                menuBtn.querySelector('i').classList.add('fa-bars');
+                menuBtn.querySelector('i').classList.remove('fa-times');
+            }
         });
     </script>
 </body>
