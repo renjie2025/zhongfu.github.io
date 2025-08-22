@@ -3,257 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>定制订单 - 医用轻质核辐射防护装备</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        header {
-            background-color: #f8f8f8;
-            padding: 1.5rem;
-            text-align: center;
-        }
-        h1 {
-            font-size: clamp(1.5rem, 5vw, 2rem);
-            margin: 0 0 1rem;
-        }
-        nav {
-            background-color: #333;
-            padding: 0.5rem;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        nav ul li {
-            margin: 0.5rem 1rem;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 1rem;
-        }
-        .nav-toggle {
-            display: none;
-            font-size: 1.5rem;
-            color: white;
-            background: none;
-            border: none;
-            cursor: pointer;
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-        }
-        .form-section {
-            padding: 1.5rem;
-            max-width: 1000px;
-            margin: auto;
-        }
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        h2 {
-            font-size: clamp(1.25rem, 4vw, 1.75rem);
-            text-align: center;
-        }
-        h3 {
-            font-size: clamp(1rem, 3vw, 1.25rem);
-            margin-bottom: 1rem;
-        }
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-size: clamp(0.9rem, 2.5vw, 1rem);
-        }
-        input {
-            width: 100%;
-            padding: 0.75rem;
-            margin-bottom: 0.75rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: clamp(0.9rem, 2.5vw, 1rem);
-            box-sizing: border-box;
-        }
-        .btn {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: clamp(0.9rem, 2.5vw, 1rem);
-            text-align: center;
-            margin: 0.5rem;
-        }
-        .btn:hover {
-            background-color: #0056b3;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            font-size: clamp(0.8rem, 2vw, 0.9rem);
-        }
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                flex-direction: column;
-                align-items: center;
-            }
-            nav ul.active {
-                display: flex;
-            }
-            .nav-toggle {
-                display: block;
-            }
-            .form-section {
-                padding: 1rem;
-            }
-            .form-group {
-                display: grid;
-                grid-template-columns: 1fr;
-                gap: 0.5rem;
-            }
-            input {
-                padding: 0.5rem;
-            }
-            .btn {
-                width: 100%;
-                padding: 0.75rem;
+    <title>定制防护服订单 - 湖北中辐新材料有限公司</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#36BFFA',
+                        success: '#00B42A',
+                        warning: '#FF7D00',
+                        danger: '#F53F3F',
+                        dark: '#1D2129',
+                        light: '#F2F3F5'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
             }
         }
-        @media (min-width: 769px) {
-            .form-group {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 1rem;
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
             }
         }
     </style>
 </head>
-<body>
-    <header>
-        <h1>医用轻质核辐射防护装备</h1>
-        <nav>
-            <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
-            <ul id="nav-menu">
-                <li><a href="index.html">防护产品</a></li>
-                <li><a href="index.html#features">产品特点</a></li>
-                <li><a href="custom-order.html">定制订单</a></li>
-                <li><a href="index.html#about">关于我们</a></li>
-                <li><a href="index.html#contact">联系我们</a></li>
-            </ul>
-        </nav>
+<body class="bg-gray-50 font-sans">
+    <!-- 导航栏 -->
+    <header class="bg-white shadow-md sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fa fa-shield text-primary text-3xl mr-3"></i>
+                <h1 class="text-2xl font-bold text-dark">医用轻质核辐射防护<span class="text-primary">装备</span></h1>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-gray-600 hover:text-primary transition-colors">返回首页</a>
+                <a href="index.html#products" class="text-gray-600 hover:text-primary transition-colors">防护产品</a>
+                <a href="index.html#features" class="text-gray-600 hover:text-primary transition-colors">产品特点</a>
+                <a href="index.html#about" class="text-gray-600 hover:text-primary transition-colors">关于我们</a>
+                <a href="index.html#contact" class="text-gray-600 hover:text-primary transition-colors">联系我们</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="menuBtn" class="text-gray-600 hover:text-primary">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- 移动端菜单 -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="index.html" class="py-2 text-gray-600 hover:text-primary transition-colors">返回首页</a>
+                <a href="index.html#products" class="py-2 text-gray-600 hover:text-primary transition-colors">防护产品</a>
+                <a href="index.html#features" class="py-2 text-gray-600 hover:text-primary transition-colors">产品特点</a>
+                <a href="index.html#about" class="py-2 text-gray-600 hover:text-primary transition-colors">关于我们</a>
+                <a href="index.html#contact" class="py-2 text-gray-600 hover:text-primary transition-colors">联系我们</a>
+            </div>
+        </div>
     </header>
 
-    <section class="form-section">
-        <h2>防护服装定制单</h2>
-        <p>填写以下信息以定制您的专属防护服装</p>
-        <form action="submit-order" method="post">
-            <div class="form-group">
-                <h3>客户信息</h3>
-                <label for="name">客户姓名</label>
-                <input type="text" id="name" name="name" required aria-required="true">
-                
-                <label for="phone">联系电话</label>
-                <input type="tel" id="phone" name="phone" required aria-required="true">
-                
-                <label for="wechat">微信号</label>
-                <input type="text" id="wechat" name="wechat">
-                
-                <label for="order-date">定制日期</label>
-                <input type="date" id="order-date" name="order-date" required aria-required="true">
-                
-                <label for="delivery-date">交货日期</label>
-                <input type="date" id="delivery-date" name="delivery-date" required aria-required="true">
+    <!-- 定制表单 -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">定制您的防护服</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">请填写以下信息以定制您的核辐射防护服，我们将尽快与您联系确认订单详情。</p>
             </div>
-
-            <div class="form-group">
-                <h3>尺寸信息 (单位: 厘米)</h3>
-                <label for="height">身高</label>
-                <input type="number" id="height" name="height" step="0.1" required aria-required="true">
-                
-                <label for="length">衣长</label>
-                <input type="number" id="length" name="length" step="0.1" required aria-required="true">
-                
-                <label for="shoulder">肩宽</label>
-                <input type="number" id="shoulder" name="shoulder" step="0.1" required aria-required="true">
-                
-                <label for="sleeve">袖长</label>
-                <input type="number" id="sleeve" name="sleeve" step="0.1" required aria-required="true">
-                
-                <label for="chest">胸围</label>
-                <input type="number" id="chest" name="chest" step="0.1" required aria-required="true">
-                
-                <label for="waist">中腰</label>
-                <input type="number" id="waist" name="waist" step="0.1" required aria-required="true">
-                
-                <label for="collar">领围</label>
-                <input type="number" id="collar" name="collar" step="0.1" required aria-required="true">
-                
-                <label for="front-chest">前胸宽</label>
-                <input type="number" id="front-chest" name="front-chest" step="0.1" required aria-required="true">
-                
-                <label for="back-width">后背宽</label>
-                <input type="number" id="back-width" name="back-width" step="0.1" required aria-required="true">
-                
-                <label for="pants-length">裤长</label>
-                <input type="number" id="pants-length" name="pants-length" step="0.1" required aria-required="true">
-                
-                <label for="waist-circum">腰围</label>
-                <input type="number" id="waist-circum" name="waist-circum" step="0.1" required aria-required="true">
-                
-                <label for="hip">臀围</label>
-                <input type="number" id="hip" name="hip" step="0.1" required aria-required="true">
-                
-                <label for="crotch-width">横档</label>
-                <input type="number" id="crotch-width" name="crotch-width" step="0.1" required aria-required="true">
-                
-                <label for="crotch-depth">中档</label>
-                <input type="number" id="crotch-depth" name="crotch-depth" step="0.1" required aria-required="true">
-                
-                <label for="leg-opening">脚口</label>
-                <input type="number" id="leg-opening" name="leg-opening" step="0.1" required aria-required="true">
-                
-                <label for="inseam">直裆</label>
-                <input type="number" id="inseam" name="inseam" step="0.1" required aria-required="true">
-                
-                <label for="abdomen">腹围</label>
-                <input type="number" id="abdomen" name="abdomen" step="0.1" required aria-required="true">
+            <div class="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-md">
+                <form id="customOrderForm" class="space-y-6">
+                    <div>
+                        <label for="customerName" class="block text-sm font-medium text-gray-700">客户名称</label>
+                        <input type="text" id="customerName" name="customerName" required
+                               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary"
+                               placeholder="请输入您的姓名或公司名称">
+                    </div>
+                    <div>
+                        <label for="contactPhone" class="block text-sm font-medium text-gray-700">联系电话</label>
+                        <input type="tel" id="contactPhone" name="contactPhone" required
+                               pattern="^\+?\d{10,15}$" title="请输入有效的电话号码（10-15位数字，可包含国家代码）"
+                               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary"
+                               placeholder="请输入您的联系电话">
+                    </div>
+                    <div>
+                        <label for="orderDate" class="block text-sm font-medium text-gray-700">定制日期</label>
+                        <input type="date" id="orderDate" name="orderDate" required
+                               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                    </div>
+                    <div>
+                        <label for="deliveryDate" class="block text-sm font-medium text-gray-700">交货日期</label>
+                        <input type="date" id="deliveryDate" name="deliveryDate" required
+                               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                    </div>
+                    <div>
+                        <label for="styleSelection" class="block text-sm font-medium text-gray-700">款式选择</label>
+                        <select id="styleSelection" name="styleSelection" required
+                                class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                            <option value="" disabled selected>请选择防护服款式</option>
+                            <option value="分体有袖">分体有袖</option>
+                            <option value="分体无袖">分体无袖</option>
+                            <option value="连体有袖">连体有袖</option>
+                            <option value="连体无袖">连体无袖</option>
+                            <option value="背心式仅前片">背心式仅前片</option>
+                        </select>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit"
+                                class="bg-primary text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-primary/90 transition-all">
+                            提交订单 <i class="fa fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </form>
             </div>
-
-            <div class="form-group">
-                <h3>具体要求</h3>
-                <label for="front-lead">前片铅当量</label>
-                <input type="text" id="front-lead" name="front-lead" required aria-required="true">
-                
-                <label for="back-lead">后片铅当量</label>
-                <input type="text" id="back-lead" name="back-lead" required aria-required="true">
-            </div>
-
-            <button type="submit" class="btn">提交定制单</button>
-            <a href="index.html" class="btn">返回主页</a>
-        </form>
+        </div>
     </section>
 
-    <footer>
-        <p>联系我们：湖北中辐新材料有限公司</p>
-        <p>Email: contact@zhongfu.com | 电话: 123-456-7890</p>
-    </footer>
-
+    <!-- 表单提交脚本 -->
     <script>
-        const navToggle = document.querySelector('.nav-toggle');
-        const navMenu = document.querySelector('#nav-menu');
-        navToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
+        const form = document.getElementById('customOrderForm');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // 简单验证示例，实际应用中应发送到服务器
+            alert('订单提交成功！我们将尽快与您联系。');
+            form.reset();
+        });
+
+        // 移动端菜单切换
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
     </script>
 </body>
