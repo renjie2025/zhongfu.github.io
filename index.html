@@ -3,279 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>安全防护 - 专业防护服供应商</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#165DFF',
-                        secondary: '#36BFFA',
-                        success: '#00B42A',
-                        warning: '#FF7D00',
-                        danger: '#F53F3F',
-                        dark: '#1D2129',
-                        light: '#F2F3F5'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .content-auto {
-                content-visibility: auto;
-            }
-            .product-card-shadow {
-                box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
-            }
-            .product-card-shadow:hover {
-                box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.2);
-            }
+    <title>医用轻质核辐射防护装备</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header { background-color: #f8f8f8; padding: 20px; text-align: center; }
+        nav { background-color: #333; color: white; padding: 10px; }
+        nav ul { list-style: none; padding: 0; display: flex; justify-content: center; }
+        nav ul li { margin: 0 15px; }
+        nav ul li a { color: white; text-decoration: none; }
+        .hero { text-align: center; padding: 50px; background-color: #e0f7fa; }
+        .section { padding: 20px; }
+        .products, .features, .certifications { display: flex; justify-content: space-around; flex-wrap: wrap; }
+        .product-card, .feature-card, .certification { width: 30%; margin: 10px; text-align: center; }
+        footer { background-color: #333; color: white; text-align: center; padding: 10px; }
+        @media (max-width: 768px) {
+            .product-card, .feature-card, .certification { width: 100%; }
         }
     </style>
 </head>
-<body class="bg-gray-50 font-sans">
-    <!-- 导航栏 -->
-    <header class="bg-white shadow-md sticky top-0 z-50 transition-all duration-300">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center">
-                <i class="fa fa-shield text-primary text-3xl mr-3"></i>
-                <h1 class="text-2xl font-bold text-dark">医用轻质核辐射防护<span class="text-primary">装备</span></h1>
-            </div>
-            <nav class="hidden md:flex space-x-6">
-                <a href="#products" class="text-gray-600 hover:text-primary transition-colors">防护产品</a>
-                <a href="#features" class="text-gray-600 hover:text-primary transition-colors">产品特点</a>
-                <a href="custom-order.html" class="text-gray-600 hover:text-primary transition-colors">定制订单</a>
-                <a href="#about" class="text-gray-600 hover:text-primary transition-colors">关于我们</a>
-                <a href="#contact" class="text-gray-600 hover:text-primary transition-colors">联系我们</a>
-            </nav>
-            <div class="md:hidden">
-                <button id="menuBtn" class="text-gray-600 hover:text-primary">
-                    <i class="fa fa-bars text-xl"></i>
-                </button>
-            </div>
-        </div>
-        <!-- 移动端菜单 -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
-            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
-                <a href="#products" class="py-2 text-gray-600 hover:text-primary transition-colors">防护产品</a>
-                <a href="#features" class="py-2 text-gray-600 hover:text-primary transition-colors">产品特点</a>
-                <a href="custom-order.html" class="py-2 text-gray-600 hover:text-primary transition-colors">定制订单</a>
-                <a href="#about" class="py-2 text-gray-600 hover:text-primary transition-colors">关于我们</a>
-                <a href="#contact" class="py-2 text-gray-600 hover:text-primary transition-colors">联系我们</a>
-            </div>
-        </div>
+<body>
+    <header>
+        <h1>医用轻质核辐射防护装备</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">防护产品</a></li>
+                <li><a href="#features">产品特点</a></li>
+                <li><a href="custom-order.html">定制订单</a></li>
+                <li><a href="#about">关于我们</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- 英雄区域轮播 -->
-    <section class="bg-gradient-to-r from-primary to-secondary text-white py-16 md:py-24 overflow-hidden relative">
-        <div class="carousel-container relative">
-            <div class="carousel-track flex transition-transform duration-500 ease-in-out">
-                <div class="carousel-slide min-w-full">
-                    <div class="container mx-auto px-4">
-                        <div class="flex flex-col md:flex-row items-center">
-                            <div class="md:w-1/2 mb-10 md:mb-0">
-                                <h2 class="text-[clamp(1.5rem,4vw,2rem)] font-bold leading-tight mb-4">
-                                    <span class="block text-[clamp(2.8rem,6vw,3.5rem)] font-extrabold text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.2)] mb-4">
-                                        湖北中辐新材料有限公司
-                                    </span>
-                                    0铅、0重金属、0化学污染物射线防护材料守护您的安全
-                                </h2>
-                                <p class="text-lg md:text-xl mb-8 text-white/90 max-w-lg">
-                                    制备出了吨级铋钆钨复合氧化物粉体，可以看出这些氧化物粉体呈现明显的核壳异质结构。为核辐射防护产业提供国际领先的新型核辐射防护材料。
-                                </p>
-                                <a href="#products" class="bg-white text-primary font-semibold px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all">
-                                    查看产品 <i class="fa fa-arrow-right ml-2"></i>
-                                </a>
-                            </div>
-                            <div class="md:w-1/2 flex justify-center gap-4">
-                                <!-- 修复图片显示和布局问题 -->
-                                <img src="https://picsum.photos/id/1/300/300" alt="专业防护服展示" class="rounded-lg shadow-2xl max-w-[45%] h-auto transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                                <img src="https://picsum.photos/id/2/300/300" alt="专业防护服展示" class="rounded-lg shadow-2xl max-w-[45%] h-auto transform -rotate-2 hover:rotate-0 transition-transform duration-500">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-slide min-w-full">
-                    <div class="container mx-auto px-4">
-                        <div class="flex flex-col md:flex-row items-center">
-                            <div class="md:w-1/2 mb-10 md:mb-0">
-                                <h2 class="text-[clamp(1.5rem,4vw,2rem)] font-bold leading-tight mb-4">
-                                    介入医生手部皮肤在低剂量辐射下的慢性危害
-                                </h2>
-                                <p class="text-lg md:text-xl mb-8 text-white/90 max-w-lg">
-                                    我们的防护手套专为介入医生设计，提供卓越的辐射防护，减少长期低剂量辐射对皮肤的损害。
-                                </p>
-                                <a href="#features" class="bg-white text-primary font-semibold px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all">
-                                    了解技术 <i class="fa fa-arrow-right ml-2"></i>
-                                </a>
-                            </div>
-                            <div class="md:w-1/2 flex justify-center">
-                                <img src="https://picsum.photos/id/3/400/400" alt="专业防护手套展示" class="rounded-lg shadow-2xl max-w-full h-auto transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-slide min-w-full">
-                    <div class="container mx-auto px-4">
-                        <div class="flex flex-col md:flex-row items-center">
-                            <div class="md:w-1/2 mb-10 md:mb-0">
-                                <h2 class="text-[clamp(1.5rem,4vw,2rem)] font-bold leading-tight mb-4">
-                                    自制全无纺布基核辐射防护服
-                                </h2>
-                                <p class="text-lg md:text-xl mb-8 text-white/90 max-w-lg">
-                                    从医疗手术到工业探伤，从实验室研究到核医学科，我们提供全场景防护产品，支持按需定制，满足不同行业的特殊防护需求。
-                                </p>
-                                <a href="custom-order.html" class="bg-white text-primary font-semibold px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all">
-                                    联系定制 <i class="fa fa-arrow-right ml-2"></i>
-                                </a>
-                            </div>
-                            <div class="md:w-1/2 flex justify-center gap-4">
-                                <img src="https://picsum.photos/id/4/300/300" alt="无纺布基防护服展示" class="rounded-lg shadow-2xl max-w-[45%] h-auto transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                                <img src="https://picsum.photos/id/5/300/300" alt="无纺布基防护服展示" class="rounded-lg shadow-2xl max-w-[45%] h-auto transform -rotate-2 hover:rotate-0 transition-transform duration-500">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <section class="hero">
+        <h2>湖北中辐新材料有限公司</h2>
+        <p>0铅、0重金属、0化学污染物射线防护材料守护您的安全</p>
+        <p>制备出了吨级铋钆钨复合氧化物粉体，可以看出这些氧化物粉体呈现明显的核壳异质结构。为核辐射防护产业提供国际领先的新型核辐射防护材料。</p>
+        <a href="#products" class="btn">查看产品</a>
+    </section>
+
+    <section id="products" class="section">
+        <h2>防护产品</h2>
+        <div class="products">
+            <div class="product-card">
+                <img src="gloves.jpg" alt="防护手套" style="width:100%; max-height:200px;">
+                <h3>介入医生手部皮肤在低剂量辐射下的慢性危害</h3>
+                <p>我们的防护手套专为介入医生设计，提供卓越的辐射防护，减少长期低剂量辐射对皮肤的损害。</p>
+                <a href="#tech" class="btn">了解技术</a>
             </div>
-            <button class="carousel-control prev absolute top-1/2 left-4 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-sm transition-all">
-                <i class="fa fa-chevron-left"></i>
-            </button>
-            <button class="carousel-control next absolute top-1/2 right-4 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-sm transition-all">
-                <i class="fa fa-chevron-right"></i>
-            </button>
-            <div class="carousel-indicators flex justify-center space-x-2 absolute bottom-8 left-0 right-0">
-                <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white active" data-index="0"></button>
-                <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white" data-index="1"></button>
-                <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white" data-index="2"></button>
+            <div class="product-card">
+                <img src="suit.jpg" alt="防护服" style="width:100%; max-height:200px;">
+                <h3>自制全无纺布基核辐射防护服</h3>
+                <p>从医疗手术到工业探伤，从实验室研究到核医学科，我们提供全场景防护产品，支持按需定制，满足不同行业的特殊防护需求。</p>
+                <a href="custom-order.html" class="btn">联系定制</a>
             </div>
         </div>
     </section>
 
-    <!-- 轮播功能 JavaScript -->
-    <script>
-        const track = document.querySelector('.carousel-track');
-        const slides = document.querySelectorAll('.carousel-slide');
-        const prevBtn = document.querySelector('.carousel-control.prev');
-        const nextBtn = document.querySelector('.carousel-control.next');
-        const indicators = document.querySelectorAll('.carousel-indicators button');
-        let currentIndex = 0;
-        let slideWidth = 100;
-        let interval;
+    <section id="certifications" class="section">
+        <h2>受到行业认可与信赖</h2>
+        <div class="certifications">
+            <div class="certification">ISO 9001 认证</div>
+            <div class="certification">CE 认证</div>
+            <div class="certification">医疗行业标准</div>
+            <div class="certification">安全生产认证</div>
+        </div>
+    </section>
 
-        function initCarousel() {
-            updateSlidePosition();
-            startAutoPlay();
-        }
-
-        function updateSlidePosition() {
-            track.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
-            indicators.forEach((indicator, index) => {
-                if (index === currentIndex) {
-                    indicator.classList.add('bg-white');
-                    indicator.classList.remove('bg-white/50');
-                } else {
-                    indicator.classList.add('bg-white/50');
-                    indicator.classList.remove('bg-white');
-                }
-            });
-        }
-
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % slides.length;
-            updateSlidePosition();
-        }
-
-        function prevSlide() {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-            updateSlidePosition();
-        }
-
-        function goToSlide(index) {
-            currentIndex = index;
-            updateSlidePosition();
-        }
-
-        function startAutoPlay() {
-            interval = setInterval(nextSlide, 5000);
-        }
-
-        function pauseAutoPlay() {
-            clearInterval(interval);
-        }
-
-        nextBtn.addEventListener('click', () => {
-            pauseAutoPlay();
-            nextSlide();
-            startAutoPlay();
-        });
-
-        prevBtn.addEventListener('click', () => {
-            pauseAutoPlay();
-            prevSlide();
-            startAutoPlay();
-        });
-
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => {
-                pauseAutoPlay();
-                goToSlide(index);
-                startAutoPlay();
-            });
-        });
-
-        track.addEventListener('mouseenter', pauseAutoPlay);
-        track.addEventListener('mouseleave', startAutoPlay);
-        window.addEventListener('resize', updateSlidePosition);
-        initCarousel();
-    </script>
-
-    <!-- 信任标识 -->
-    <section class="py-8 bg-white">
-        <div class="container mx-auto px-4">
-            <p class="text-center text-gray-500 mb-6">受到行业认可与信赖</p>
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70">
-                <div class="text-gray-400 text-xl font-bold">ISO 9001 认证</div>
-                <div class="text-gray-400 text-xl font-bold">CE 认证</div>
-                <div class="text-gray-400 text-xl font-bold">医疗行业标准</div>
-                <div class="text-gray-400 text-xl font-bold">安全生产认证</div>
+    <section id="features" class="section">
+        <h2>为什么选择我们的防护服</h2>
+        <p>我们的防护装备经过严格测试，确保提供最高级别的防护性能与舒适体验</p>
+        <div class="features">
+            <div class="feature-card">
+                <img src="medical.jpg" alt="医疗防护服" style="width:100%; max-height:200px;">
+                <h3>医疗领域无铅防护服</h3>
+                <p>屏蔽效率远超竞争产品，所有产品通过严格检测，符合国家及国际防护标准，安全可靠。橡胶基材料：绿色纳米防辐射复合材料。</p>
+            </div>
+            <div class="feature-card">
+                <img src="industrial.jpg" alt="核工业板材" style="width:100%; max-height:200px;">
+                <h3>核工业领域板材</h3>
+                <p>核工业的高标准PE基板材：通过热压法得到梯度多层预制板。用于建造核反应堆。</p>
+            </div>
+            <div class="feature-card">
+                <img src="fabric.jpg" alt="无纺布" style="width:100%; max-height:200px;">
+                <h3>纤维基核辐射防护无纺布</h3>
+                <p>纤维基核辐射防护无纺布，民用领域具有核辐射防护性能的纺织品。</p>
             </div>
         </div>
     </section>
 
-    <!-- 产品特点 -->
-    <section id="features" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">为什么选择我们的防护服</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-lg">我们的防护装备经过严格测试，确保提供最高级别的防护性能与舒适体验</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-                    <div class="h-40 mb-5 overflow-hidden rounded-lg flex items-center justify-center">
-                        <img src="https://picsum.photos/id/6/300/200" alt="医疗领域无铅防护服" class="rounded-lg shadow-2xl max-w-full h-auto transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-dark">医疗领域无铅防护服</h3>
-                    <p class="text-gray-600">屏蔽效率远超竞争产品，所有产品通过严格检测，符合国家及国际防护标准，安全可靠。橡胶基材料：绿色纳米防辐射复合材料。</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-                    <div class="h-40 mb-5 overflow-hidden rounded-lg flex items-center justify-center">
-                        <img src="https://picsum.photos/id/7/300/200" alt="核工业领域板材" class="rounded-lg shadow-2xl max-w-full h-auto transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-dark">核工业领域板材</h3>
-                    <p class="text-gray-600">核工业的高标准PE基板材：通过热压法得到梯度多层预制板。用于建造核反应堆。</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-                    <div class="h-40 mb-5 overflow-hidden rounded-lg flex items-center justify-center">
-                        <img src="https://picsum.photos/id/8/300/200" alt="纤维基核辐射防护无纺布" class="rounded-lg shadow-2xl max-w-full h-auto transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-dark">纤维基核辐射防护无纺布</h3>
-                    <p class="text-gray-600">纤维基核辐射防护无纺布，民用领域具有核辐射防护性能的纺织品。</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+    <footer id="contact">
+        <p>联系我们：湖北中辐新材料有限公司</p>
+        <p>Email: contact@zhongfu.com | 电话: 123-456-7890</p>
+    </footer>
+</body>
+</html>
